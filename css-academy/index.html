@@ -1,611 +1,1508 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Chennai Soccer School & Sports Academy – Professional Football Coaching, Scientific Training, Indoor Football Facility in T. Nagar, Chennai. Est. 2005." />
-  <meta name="keywords" content="football academy Chennai, soccer school Chennai, kids football training, youth football, Chennai Soccer School, CSS academy" />
-  <meta property="og:title" content="Chennai Soccer School & Sports Academy" />
-  <meta property="og:description" content="Train Like a Champion. Play Like a Professional." />
-  <meta property="og:type" content="website" />
-  <title>Chennai Soccer School & Sports Academy | CSS</title>
-  <link rel="icon" type="image/png" href="images/logo.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+/* =============================================
+   CSS ACADEMY — PREMIUM FOOTBALL ACADEMY THEME
+   Dark Navy · Gold · White · Stadium Glow
+   ============================================= */
 
-<style>
+/* ---- TOKENS ---- */
+:root {
+  --navy:       #0a1628;
+  --navy-mid:   #0f2040;
+  --navy-card:  #132035;
+  --navy-glass: rgba(13, 24, 46, 0.75);
+  --gold:       #c9a227;
+  --gold-light: #e8c45a;
+  --gold-dim:   rgba(201, 162, 39, 0.15);
+  --white:      #ffffff;
+  --off-white:  #e8edf5;
+  --text-muted: #8a9bbf;
+  --green-wa:   #25d366;
+  --border:     rgba(201, 162, 39, 0.2);
+  --glow:       0 0 60px rgba(201, 162, 39, 0.15);
+
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-heading: 'Oswald', sans-serif;
+  --font-body:    'Inter', sans-serif;
+
+  --radius-sm:  8px;
+  --radius-md:  14px;
+  --radius-lg:  20px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --max-w:      1200px;
+}
+
+/* ---- RESET ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--navy);
+  color: var(--off-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+input, select, textarea { font-family: var(--font-body); }
+
+/* ---- UTILITIES ---- */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.gold-text { color: var(--gold); }
+
+.section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 0.35rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  line-height: 1.15;
+}
+
+.section-desc {
+  margin-top: 0.75rem;
+  color: var(--text-muted);
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---- BUTTONS ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold), #a07c18);
+  color: var(--navy);
+  box-shadow: 0 4px 20px rgba(201, 162, 39, 0.35);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201, 162, 39, 0.5);
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid rgba(255,255,255,0.4);
+}
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(201, 162, 39, 0.08);
+}
+
+.btn-whatsapp {
+  background: var(--green-wa);
+  color: var(--white);
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+}
+.btn-whatsapp:hover {
+  background: #1aaa52;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.45);
+}
+
+.btn-full { width: 100%; justify-content: center; }
+
+/* =============================================
+   NAVBAR
+   ============================================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background var(--transition), box-shadow var(--transition);
+  padding: 0.6rem 0;
+}
+.navbar.scrolled {
+  background: rgba(10, 22, 40, 0.97);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 2px 30px rgba(0,0,0,0.4);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.nav-logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(201,162,39,0.3));
+}
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.nav-logo-main {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+.nav-logo-sub {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-link {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--off-white);
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition), background var(--transition);
+}
+.nav-link:hover {
+  color: var(--gold);
+  background: var(--gold-dim);
+}
+.nav-link.nav-cta {
+  background: linear-gradient(135deg, var(--gold), #a07c18);
+  color: var(--navy);
+  padding: 0.5rem 1.2rem;
+  margin-left: 0.5rem;
+}
+.nav-link.nav-cta:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* =============================================
+   HERO
+   ============================================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(201, 162, 39, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 70%, rgba(15, 32, 64, 0.9) 0%, transparent 50%),
+    url('images/hero-bg.jpg') center/cover no-repeat,
+    linear-gradient(135deg, #050d1a 0%, #0a1628 40%, #0f2040 70%, #0a1628 100%);
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 13, 26, 0.6) 0%,
+    rgba(10, 22, 40, 0.5) 50%,
+    rgba(5, 13, 26, 0.85) 100%
+  );
+}
+
+/* Animated field lines in background */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(201, 162, 39, 0.03) 0px,
+      rgba(201, 162, 39, 0.03) 1px,
+      transparent 1px,
+      transparent 80px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(201, 162, 39, 0.03) 0px,
+      rgba(201, 162, 39, 0.03) 1px,
+      transparent 1px,
+      transparent 80px
+    );
+  animation: gridPulse 8s ease-in-out infinite;
+}
+
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Stadium lights glow blobs */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: 10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(201, 162, 39, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: stadiumGlow 6s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+@keyframes stadiumGlow {
+  0%   { transform: scale(1) translateY(0); opacity: 0.6; }
+  100% { transform: scale(1.3) translateY(-20px); opacity: 1; }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 8rem 1.5rem 5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201, 162, 39, 0.1);
+  border: 1px solid var(--border);
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+}
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: blink 1.5s ease-in-out infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+.hero-logo {
+  width: 140px;
+  height: auto;
+  margin: 0 auto 1.5rem;
+  filter: drop-shadow(0 4px 24px rgba(201, 162, 39, 0.5));
+  animation: logoFloat 4s ease-in-out infinite;
+}
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  color: var(--white);
+  line-height: 1.0;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.25rem;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+  font-family: var(--font-heading);
+  font-size: clamp(0.85rem, 2vw, 1.1rem);
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem 2rem;
+  background: rgba(10, 22, 40, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  flex-wrap: wrap;
+}
+.stat { text-align: center; }
+.stat-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--gold);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 0.25rem;
+}
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--border);
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+}
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+/* =============================================
+   ABOUT
+   ============================================= */
+.about { background: var(--navy-mid); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-lead {
+  font-size: 1.15rem;
+  color: var(--white);
+  font-weight: 500;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.about-body {
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.feature-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: var(--navy-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  transition: var(--transition);
+}
+.feature-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(201, 162, 39, 0.12);
+}
+.feature-icon {
+  font-size: 1.75rem;
+  min-width: 40px;
+  line-height: 1;
+}
+.feature-card h3 {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.feature-card p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* =============================================
+   PROGRAMS
+   ============================================= */
+.programs {
+  background: var(--navy);
+  position: relative;
+}
+.programs::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.program-card {
+  background: var(--navy-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  position: relative;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.program-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 50px rgba(201, 162, 39, 0.15);
+}
+.program-card.featured {
+  border-color: var(--gold);
+  background: linear-gradient(160deg, #1a2e50 0%, var(--navy-card) 100%);
+  box-shadow: 0 0 40px rgba(201, 162, 39, 0.15);
+}
+
+.program-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--gold), #a07c18);
+  color: var(--navy);
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.9rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.program-icon { font-size: 2rem; }
+
+.program-age {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  background: var(--gold-dim);
+  padding: 0.2rem 0.75rem;
+  border-radius: 100px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.program-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: 0.03em;
+}
+
+.program-desc {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.program-list {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+.program-list li {
+  font-size: 0.8rem;
+  color: var(--off-white);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.program-list li::before {
+  content: '→';
+  color: var(--gold);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.program-cta {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  transition: var(--transition);
+  margin-top: auto;
+  display: inline-block;
+}
+.program-cta:hover { letter-spacing: 0.1em; }
+
+/* =============================================
+   WHY US
+   ============================================= */
+.why-us {
+  background: var(--navy-mid);
+  position: relative;
+  overflow: hidden;
+}
+.why-us::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(201,162,39,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.why-card {
+  background: rgba(19, 32, 53, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: var(--gold);
+  transition: height var(--transition);
+}
+.why-card:hover::before { height: 100%; }
+.why-card:hover {
+  border-color: var(--gold);
+  transform: translateX(4px);
+  box-shadow: -4px 0 30px rgba(201, 162, 39, 0.1);
+}
+
+.why-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--gold), #a07c18);
+  color: var(--navy);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.why-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.why-card p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* =============================================
+   EVENTS
+   ============================================= */
+.events { background: var(--navy); }
+
+.events-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+  justify-content: center;
+}
+
+.tab-btn {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.6rem 1.75rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.tab-btn.active, .tab-btn:hover {
+  background: linear-gradient(135deg, var(--gold), #a07c18);
+  color: var(--navy);
+  border-color: var(--gold);
+}
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.event-card {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+  aspect-ratio: 3/4;
+}
+.event-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(201, 162, 39, 0.15);
+}
+
+.placeholder-card {
+  background: var(--navy-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.event-placeholder {
+  text-align: center;
+  padding: 2rem;
+}
+.placeholder-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.placeholder-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.placeholder-date {
+  font-size: 0.8rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.placeholder-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+.file-hint {
+  font-size: 0.7rem;
+  color: var(--gold);
+  background: var(--gold-dim);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.events-note {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  padding: 1rem;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+}
+.events-note code {
+  color: var(--gold);
+  background: var(--gold-dim);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* =============================================
+   GALLERY
+   ============================================= */
+.gallery { background: var(--navy-mid); }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 1rem;
+}
+
+.gallery-large {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.gallery-item {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  position: relative;
+  aspect-ratio: 1;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.gallery-large { aspect-ratio: auto; }
+
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-item:hover { border-color: var(--gold); }
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--navy-card);
+  padding: 1.5rem;
+}
+
+.gallery-logo-showcase {
+  background: linear-gradient(135deg, var(--navy-card), #1a2e50);
+}
+
+.gallery-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--navy-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  gap: 0.5rem;
+}
+.gp-icon { font-size: 2rem; }
+.gallery-placeholder p {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+.gallery-placeholder code {
+  font-size: 0.65rem;
+  color: var(--gold);
+  background: var(--gold-dim);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,22,40,0.85) 0%, transparent 60%);
+  opacity: 0;
+  transition: var(--transition);
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+}
+.gallery-label {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+}
+
+.gallery-note {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.gallery-note code {
+  color: var(--gold);
+}
+
+/* =============================================
+   VENUE
+   ============================================= */
+.venue { background: var(--navy); }
+
+.venue-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.venue-name {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.venue-icon { font-size: 2.5rem; }
+.venue-name h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--white);
+}
+.venue-name p { color: var(--gold); font-size: 0.85rem; }
+
+.venue-details { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2rem; }
+
+.venue-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.vd-icon { font-size: 1.25rem; min-width: 28px; }
+.venue-detail strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  margin-bottom: 0.2rem;
+}
+.venue-detail p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; }
+.venue-detail a { color: var(--off-white); transition: color var(--transition); }
+.venue-detail a:hover { color: var(--gold); }
+
+.venue-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.venue-map {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.venue-map iframe { display: block; }
+
+/* =============================================
+   CONTACT
+   ============================================= */
+.contact { background: var(--navy-mid); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.contact-card {
+  background: var(--navy-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.contact-logo {
+  width: 100px;
+  height: auto;
+  filter: drop-shadow(0 4px 16px rgba(201, 162, 39, 0.4));
+}
+
+.contact-academy-name {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  line-height: 1.3;
+}
+
+.contact-info-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+  margin: 0.5rem 0;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.ci-icon { font-size: 1.1rem; min-width: 24px; }
+.contact-info-item strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-bottom: 0.15rem;
+}
+.contact-info-item p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+.contact-info-item a { color: var(--off-white); }
+.contact-info-item a:hover { color: var(--gold); }
+
+.contact-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Enquiry Form */
+.enquiry-form-card {
+  background: var(--navy-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+}
+
+.enquiry-form-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.form-note {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.form-group label {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: rgba(255,255,255,0.05);
+  border: 1.5px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  color: var(--white);
+  font-size: 0.9rem;
+  transition: border-color var(--transition);
+  outline: none;
+  appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+  background: rgba(201, 162, 39, 0.05);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+
+.form-group select option {
+  background: var(--navy-card);
+  color: var(--white);
+}
+
+.form-disclaimer {
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+.footer { background: #050d1a; }
+
+.footer-top {
+  padding: 3.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.footer-top-inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.5fr;
+  gap: 3rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.footer-logo {
+  width: 64px;
+  height: auto;
+  filter: drop-shadow(0 2px 10px rgba(201, 162, 39, 0.3));
+}
+.footer-brand-name {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--white);
+}
+.footer-brand-sub { color: var(--gold); font-size: 0.82rem; }
+.footer-tagline {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-top: 0.4rem;
+}
+
+.footer-links h4, .footer-contact h4 {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+.footer-links ul { display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-links a {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+.footer-links a:hover { color: var(--gold); }
+
+.footer-contact p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+.footer-contact a { color: var(--text-muted); transition: color var(--transition); }
+.footer-contact a:hover { color: var(--gold); }
+
+.footer-wa {
+  display: inline-block;
+  margin-top: 0.75rem;
+  background: var(--green-wa);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+.footer-wa:hover { background: #1aaa52; transform: translateY(-2px); }
+
+.footer-bottom {
+  padding: 1.5rem 0;
+  text-align: center;
+}
+.footer-bottom p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.footer-est { font-size: 0.7rem; color: rgba(201,162,39,0.5); margin-top: 0.25rem; }
+
+/* WhatsApp Float */
+.wa-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 58px;
+  height: 58px;
+  background: var(--green-wa);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px rgba(37, 211, 102, 0.45);
+  z-index: 999;
+  transition: var(--transition);
+  animation: waPulse 2.5s ease-in-out infinite;
+}
+.wa-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 40px rgba(37, 211, 102, 0.6);
+  animation: none;
+}
+@keyframes waPulse {
+  0%, 100% { box-shadow: 0 4px 24px rgba(37, 211, 102, 0.45); }
+  50% { box-shadow: 0 4px 40px rgba(37, 211, 102, 0.7), 0 0 0 10px rgba(37, 211, 102, 0.1); }
+}
+
+/* =============================================
+   SCROLL ANIMATIONS
+   ============================================= */
+.animate-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.animate-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =============================================
+   RESPONSIVE — TABLET
+   ============================================= */
+@media (max-width: 1024px) {
+  .programs-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-top-inner { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: span 2; }
+}
+
+@media (max-width: 900px) {
+  .venue-grid, .contact-grid { grid-template-columns: 1fr; }
+  .events-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-large { grid-column: span 2; grid-row: span 1; aspect-ratio: 16/9; }
+  .gallery-large .gallery-img { object-fit: contain; height: 280px; }
+}
+
+/* =============================================
+   RESPONSIVE — MOBILE
+   ============================================= */
+@media (max-width: 768px) {
+  /* Nav */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: rgba(8, 17, 32, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5rem 2rem 2rem;
+    gap: 0.25rem;
+    transition: right 0.35s ease;
+    border-left: 1px solid var(--border);
+    z-index: 999;
+    overflow-y: auto;
+  }
+  .nav-menu.open { right: 0; }
+  .nav-link { width: 100%; padding: 0.75rem 1rem; }
+  .nav-link.nav-cta { margin-left: 0; margin-top: 1rem; text-align: center; }
+  .hamburger { display: flex; z-index: 1001; }
+
+  /* Programs */
+  .programs-grid { grid-template-columns: 1fr; }
+
+  /* Why */
+  .why-grid { grid-template-columns: 1fr; }
+
+  /* Events */
+  .events-grid { grid-template-columns: 1fr; }
+
+  /* Gallery */
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-large { grid-column: span 1; }
+  .gallery-item { aspect-ratio: 16/9; }
+  .gallery-large .gallery-img { height: 200px; }
+
+  /* About features */
+  .about-features { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer-top-inner { grid-template-columns: 1fr; }
+  .footer-brand { grid-column: span 1; }
+
+  /* Hero */
+  .hero-stats { gap: 1.25rem; padding: 1.25rem; }
+  .stat-divider { display: none; }
+
+  /* Sections */
+  .section { padding: 3.5rem 0; }
+
+  /* Venue */
+  .venue-actions { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+  .hero-logo { width: 100px; }
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .btn { font-size: 0.9rem; padding: 0.75rem 1.5rem; }
+  .hero-stats { flex-direction: column; gap: 1rem; }
+}
+
+/* =============================================
+   REDUCED MOTION
+   ============================================= */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .animate-in { opacity: 1; transform: none; }
+}
+
+
+/* =============================================
+   PREMIUM CSS ACADEMY VISUAL UPGRADE
+   ============================================= */
+
+:root{
+  --navy:#101d35;
+  --navy-mid:#172946;
+  --navy-card:#1b3154;
+  --gold:#d9aa2b;
+  --gold-light:#f3d36b;
+  --text-muted:#b5c7e6;
+}
+
+/* Premium body */
+body{
+ background:
+ radial-gradient(circle at top, rgba(217,170,43,.15), transparent 35%),
+ linear-gradient(135deg,#071426,#172946 55%,#0b1930);
+}
+
+/* Hero premium background */
+.hero{
+ background:
+ radial-gradient(circle at 50% 20%,rgba(243,211,107,.22),transparent 35%),
+ linear-gradient(135deg,#071426,#172946 55%,#0a1628),
+ url('images/hero-bg.jpg') center/cover no-repeat;
+}
+
+/* Logo bigger premium */
+.hero-logo{
+ width:280px;
+ max-width:85%;
+ margin:0 auto 35px;
+ filter:
+ drop-shadow(0 0 25px rgba(243,211,107,.8))
+ drop-shadow(0 10px 30px rgba(0,0,0,.5));
+ animation:premiumFloat 4s ease-in-out infinite;
+}
+
+@keyframes premiumFloat{
+0%,100%{transform:translateY(0) scale(1);}
+50%{transform:translateY(-15px) scale(1.05);}
+}
+
+/* Badge */
+.hero-badge{
+ background:rgba(243,211,107,.12);
+ border-color:rgba(243,211,107,.45);
+ box-shadow:0 0 25px rgba(243,211,107,.15);
+}
+
+/* Hero heading */
+.hero-title{
+ font-family:'Bebas Neue',sans-serif;
+ letter-spacing:.04em;
+ text-shadow:
+ 0 5px 30px rgba(0,0,0,.8),
+ 0 0 20px rgba(243,211,107,.15);
+}
+
+/* Subtitle */
+.hero-subtitle{
+ color:#d6e3f8;
+}
+
+/* Premium cards */
+.program-card,
+.feature-card,
+.why-card,
+.contact-card,
+.enquiry-form-card{
+ background:
+ linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.02)),
+ #172946;
+ backdrop-filter:blur(12px);
+ box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+/* Text readability */
 .about-lead,
 .about-body,
 .program-desc,
 .why-card p,
-.section-desc,
-.events-note,
-.gallery-note {
-    text-align: justify;
-    line-height: 1.8;
+.section-desc{
+ text-align:justify;
+ color:#d5e3f8;
 }
-</style>
-</head>
-<body>
 
-  <!-- ===== NAVBAR ===== -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#home" class="nav-logo">
-        <img src="images/logo.png" alt="Chennai Soccer School Logo" class="nav-logo-img" />
-        <div class="nav-logo-text">
-          <span class="nav-logo-main">CSS</span>
-          <span class="nav-logo-sub">Chennai Soccer School</span>
-        </div>
-      </a>
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="#home" class="nav-link">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#programs" class="nav-link">Programs</a></li>
-        <li><a href="#events" class="nav-link">Events</a></li>
-        <li><a href="#gallery" class="nav-link">Gallery</a></li>
-        <li><a href="#venue" class="nav-link">Venue</a></li>
-        <li><a href="#contact" class="nav-link nav-cta">Join Now</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+/* Gold headings */
+.section-title,
+.program-title,
+.feature-card h3,
+.why-card h3{
+ text-shadow:0 5px 15px rgba(0,0,0,.4);
+}
 
-  <!-- ===== HERO SECTION ===== -->
-  <section class="hero" id="home">
-    <div class="hero-overlay"></div>
-    <div class="hero-particles" id="particles"></div>
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        Est. 2005 · Kilpauk · Chennai
-      </div>
-      <img src="images/logo.png" alt="CSS Academy Logo" class="hero-logo" />
-      <h1 class="hero-title">
-        Train Like a <span class="gold-text">Champion.</span><br />
-        Play Like a <span class="gold-text">Professional.</span>
-      </h1>
-      <p class="hero-subtitle">
-        Professional Football Coaching &nbsp;|&nbsp; Scientific Training &nbsp;|&nbsp; Indoor Football Facility
-      </p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn btn-primary">
-          <span>⚽</span> Join Now
-        </a>
-        <a href="#contact" class="btn btn-outline">
-          Contact Us
-        </a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-number">20+</span>
-          <span class="stat-label">Years of Excellence</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">500+</span>
-          <span class="stat-label">Players Trained</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">AFC</span>
-          <span class="stat-label">Licensed Coaches</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-scroll">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
+/* Buttons premium */
+.btn-primary{
+ background:linear-gradient(135deg,#f3d36b,#c28d13);
+ box-shadow:0 10px 35px rgba(243,211,107,.35);
+}
 
-  <!-- ===== ABOUT SECTION ===== -->
-  <section class="section about" id="about">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow">Who We Are</span>
-        <h2 class="section-title">Built on <span class="gold-text">Passion</span>, Driven by <span class="gold-text">Excellence</span></h2>
-      </div>
-      <div class="about-grid">
-        <div class="about-text">
-          <p class="about-lead">
-            Chennai Soccer School &amp; Sports Academy provides professional football training with structured coaching programs, modern techniques, fitness development, and player-focused training designed to unlock each athlete's true potential.
-          </p>
-          <p class="about-body">
-            Founded in 2005, CSS Academy has been the cornerstone of football development in Chennai. We combine international coaching methodologies with a deep understanding of the Indian football landscape — producing players who compete at state, national, and international levels.
-          </p>
-          <a href="#programs" class="btn btn-primary" style="margin-top:1.5rem">Explore Programs</a>
-        </div>
-        <div class="about-features">
-          <div class="feature-card">
-            <div class="feature-icon">🏆</div>
-            <div>
-              <h3>Professional Coaches</h3>
-              <p>AFC licensed coaches with international training experience</p>
-            </div>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🔬</div>
-            <div>
-              <h3>Scientific Training Methods</h3>
-              <p>Data-driven fitness and performance programs</p>
-            </div>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🏟️</div>
-            <div>
-              <h3>Indoor Football Facility</h3>
-              <p>World-class Pasumpon Indoor Sports Facility</p>
-            </div>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">📈</div>
-            <div>
-              <h3>Player Development Programs</h3>
-              <p>Structured pathways from grassroots to elite level</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+/* Image cards */
+.event-card,
+.gallery-item{
+ box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
 
-  <!-- ===== PROGRAMS SECTION ===== -->
-  <section class="section programs" id="programs">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow">What We Offer</span>
-        <h2 class="section-title">Training <span class="gold-text">Programs</span></h2>
-        <p class="section-desc">Structured pathways for every age group and ambition level</p>
-      </div>
-      <div class="programs-grid">
-        <div class="program-card">
-          <div class="program-icon">⚽</div>
-          <div class="program-age">Ages 5 – 10</div>
-          <h3 class="program-title">Kids Football Training</h3>
-          <p class="program-desc">Age-based skill development with fun, structured sessions that build fundamental movement, ball control, and love for the game.</p>
-          <ul class="program-list">
-            <li>Ball mastery fundamentals</li>
-            <li>Coordination & agility drills</li>
-            <li>Mini-game sessions</li>
-            <li>Character development</li>
-          </ul>
-          <a href="#contact" class="program-cta">Enroll Now →</a>
-        </div>
-        <div class="program-card featured">
-          <div class="program-badge">Most Popular</div>
-          <div class="program-icon">⚽</div>
-          <div class="program-age">Ages 11 – 16</div>
-          <h3 class="program-title">Youth Development Program</h3>
-          <p class="program-desc">Technical and tactical training designed for serious young players ready to take their game to the next level.</p>
-          <ul class="program-list">
-            <li>Advanced technical skills</li>
-            <li>Tactical understanding</li>
-            <li>Physical conditioning</li>
-            <li>Team play & strategy</li>
-          </ul>
-          <a href="#contact" class="program-cta">Enroll Now →</a>
-        </div>
-        <div class="program-card">
-          <div class="program-icon">⚽</div>
-          <div class="program-age">Ages 17+</div>
-          <h3 class="program-title">Advanced Player Training</h3>
-          <p class="program-desc">Professional-level preparation for players aspiring to compete at state, national, and elite club levels.</p>
-          <ul class="program-list">
-            <li>Elite performance training</li>
-            <li>Video analysis sessions</li>
-            <li>Strength & conditioning</li>
-            <li>Tournament exposure</li>
-          </ul>
-          <a href="#contact" class="program-cta">Enroll Now →</a>
-        </div>
-        <div class="program-card">
-          <div class="program-icon">⚽</div>
-          <div class="program-age">All Ages</div>
-          <h3 class="program-title">Weekend Football Programs</h3>
-          <p class="program-desc">Flexible weekend training sessions for those balancing school or work commitments without compromising their football journey.</p>
-          <ul class="program-list">
-            <li>Saturday & Sunday sessions</li>
-            <li>Skill-focused drills</li>
-            <li>Friendly match practice</li>
-            <li>Flexible scheduling</li>
-          </ul>
-          <a href="#contact" class="program-cta">Enroll Now →</a>
-        </div>
-      </div>
-    </div>
-  </section>
+/* Navbar */
+.navbar.scrolled{
+ background:rgba(7,20,38,.92);
+ backdrop-filter:blur(20px);
+}
 
-  <!-- ===== WHY CHOOSE US SECTION ===== -->
-  <section class="section why-us">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow">Our Edge</span>
-        <h2 class="section-title">Why Choose <span class="gold-text">CSS Academy</span></h2>
-      </div>
-      <div class="why-grid">
-        <div class="why-card">
-          <div class="why-check">✔</div>
-          <h3>AFC Licensed Coaching</h3>
-          <p>Internationally certified coaches following Asian Football Confederation standards</p>
-        </div>
-        <div class="why-card">
-          <div class="why-check">✔</div>
-          <h3>Professional Training Environment</h3>
-          <p>Discipline, respect, and high performance standards baked into every session</p>
-        </div>
-        <div class="why-card">
-          <div class="why-check">✔</div>
-          <h3>Indoor Football Facility</h3>
-          <p>Train rain or shine at Pasumpon Indoor Sports Facility — a premium turf venue</p>
-        </div>
-        <div class="why-card">
-          <div class="why-check">✔</div>
-          <h3>Fitness & Skill Development</h3>
-          <p>Holistic programs covering speed, strength, endurance, and ball technique</p>
-        </div>
-        <div class="why-card">
-          <div class="why-check">✔</div>
-          <h3>Tournament Exposure</h3>
-          <p>Regular competitive opportunities at local, state, and national level events</p>
-        </div>
-        <div class="why-card">
-          <div class="why-check">✔</div>
-          <h3>20 Years of Excellence</h3>
-          <p>Two decades of producing Tamil Nadu's best football talent since 2005</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== EVENTS SECTION ===== -->
-  <section class="section events" id="events">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow">On the Pitch</span>
-        <h2 class="section-title">Events & <span class="gold-text">Tournaments</span></h2>
-      </div>
-      <div class="events-tabs">
-        <button class="tab-btn active" data-tab="upcoming">Upcoming Events</button>
-        <button class="tab-btn" data-tab="past">Past Events</button>
-      </div>
-
-      <!-- Upcoming Events -->
-      <div class="tab-content active" id="upcoming">
-        <div class="events-grid">
-         <div class="event-card">
-    <img src="images/event-past2.jpg"
-         alt="State Youth Championship"
-         class="event-image">
-    <div class="event-content">
-        <div class="placeholder-icon">🏅</div>
-        <h3>State Youth Championship</h3>
-        <p class="placeholder-date">
-        September 2025
-        </p>
-    </div>
-</div>
-          <div class="event-card placeholder-card">
-            <div class="event-placeholder">
-              <div class="placeholder-icon">⚽</div>
-              <p class="placeholder-title">Inter-Academy Cup</p>
-              <p class="placeholder-date">Coming Soon</p>
-              <p class="placeholder-hint">Replace with your poster image</p>
-              <img src="images/event-upcoming2.jpg" alt="Upcoming Event 2" class="event-image">
-            </div>
-          </div>
-          <div class="event-card placeholder-card">
-            <div class="event-placeholder">
-              <div class="placeholder-icon">🥅</div>
-              <p class="placeholder-title">Annual Sports Day</p>
-              <p class="placeholder-date">Coming Soon</p>
-              <p class="placeholder-hint">Replace with your poster image</p>
-              <img src="images/event-upcoming3.jpg" alt="Upcoming Event 3" class="event-image">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Past Events -->
-      <div class="tab-content" id="past">
-        <div class="events-grid">
-          <div class="event-card placeholder-card">
-            <div class="event-placeholder">
-              <div class="placeholder-icon">🥇</div>
-              <p class="placeholder-title">CSS Annual Cup 2025</p>
-              <p class="placeholder-date">December 2025</p>
-              <p class="placeholder-hint">Replace with your tournament poster</p>
-              <img src="images/event-past1.jpg" alt="Past Event 1" class="event-image">
-            </div>
-          </div>
-          <div class="event-card placeholder-card">
-            <div class="event-placeholder">
-              <div class="placeholder-icon">🏅</div>
-              <p class="placeholder-title">State Youth Championship</p>
-              <p class="placeholder-date">September 2025</p>
-              <p class="placeholder-hint">Replace with your event banner</p>
-              <img src="images/event-past2.jpg" alt="Past Event 2" class="event-image">
-            </div>
-          </div>
-          <div class="event-card placeholder-card">
-            <div class="event-placeholder">
-              <div class="placeholder-icon">🌟</div>
-              <p class="placeholder-title">CSS Coaching Camp 2025</p>
-              <p class="placeholder-date">June 2025</p>
-              <p class="placeholder-hint">Replace with your camp photo</p>
-              <img src="images/event-past3.jpg" alt="Past Event 3" class="event-image">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <p class="events-note">
-        📌 To add your posters and banners, place images in the <code>images/</code> folder and update the <code>src</code> attributes in <code>index.html</code>
-      </p>
-    </div>
-  </section>
-
-  <!-- ===== GALLERY SECTION ===== -->
-  <section class="section gallery" id="gallery">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow">In Action</span>
-        <h2 class="section-title">Photo <span class="gold-text">Gallery</span></h2>
-        <p class="section-desc">Moments from the pitch, the training ground, and beyond</p>
-      </div>
-      <div class="gallery-grid">
-        <!-- Logo showcase card -->
-        <div class="gallery-item gallery-large">
-          <img src="images/logo.png" alt="CSS Academy Logo" class="gallery-img gallery-logo-showcase" />
-          <div class="gallery-overlay">
-            <span class="gallery-label">Official Badge</span>
-          </div>
-        </div>
-        <!-- Placeholder gallery items -->
-        <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <span class="gp-icon">📸</span>
-            <p>Training Photo</p>
-            <img src="images/gallery1.jpg" alt="Gallery 1" class="gallery-img">
-          </div>
-          <div class="gallery-overlay"><span class="gallery-label">Training</span></div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <span class="gp-icon">🏆</span>
-            <p>Tournament</p>
-            <img src="images/gallery2.jpg" alt="Gallery 2" class="gallery-img">
-          </div>
-          <div class="gallery-overlay"><span class="gallery-label">Tournament</span></div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <span class="gp-icon">⚽</span>
-            <p>Match Day</p>
-            <img src="images/gallery3.jpg" alt="Gallery 3" class="gallery-img">
-          </div>
-          <div class="gallery-overlay"><span class="gallery-label">Match Day</span></div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <span class="gp-icon">🥅</span>
-            <p>Skills Session</p>
-            <img src="images/gallery4.jpg" alt="Gallery 4" class="gallery-img">
-          </div>
-          <div class="gallery-overlay"><span class="gallery-label">Skills</span></div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <span class="gp-icon">🌟</span>
-            <p>Awards Night</p>
-            <img src="images/gallery5.jpg" alt="Gallery 5" class="gallery-img">
-          </div>
-          <div class="gallery-overlay"><span class="gallery-label">Awards</span></div>
-        </div>
-      </div>
-      <p class="gallery-note">Add your images to the <code>images/</code> folder and replace the placeholder <code>src</code> paths in <code>index.html</code></p>
-    </div>
-  </section>
-
-  <!-- ===== VENUE SECTION ===== -->
-  <section class="section venue" id="venue">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow">Find Us</span>
-        <h2 class="section-title">Our <span class="gold-text">Football Facility</span></h2>
-        <p class="section-desc">State-of-the-art indoor football venue in the heart of Chennai</p>
-      </div>
-      <div class="venue-grid">
-        <div class="venue-info">
-          <div class="venue-name">
-            <span class="venue-icon">🏟️</span>
-            <div>
-              <h3>Pasumpon Indoor Sports Facility</h3>
-              <p>Pasumpon Dever Mandapam</p>
-            </div>
-          </div>
-          <div class="venue-details">
-            <div class="venue-detail">
-              <span class="vd-icon">📍</span>
-              <div>
-                <strong>Address</strong>
-                <p>158/100, 2nd Floor, Habibullah Road,<br />T. Nagar, Chennai – 600017</p>
-              </div>
-            </div>
-            <div class="venue-detail">
-              <span class="vd-icon">📱</span>
-              <div>
-                <strong>Phone</strong>
-                <p><a href="tel:+919361115939">+91 9361115939</a></p>
-              </div>
-            </div>
-            <div class="venue-detail">
-              <span class="vd-icon">⏰</span>
-              <div>
-                <strong>Training Hours</strong>
-                <p>Mon – Sat: 6:00 AM – 9:00 PM<br />Sunday: 7:00 AM – 7:00 PM</p>
-              </div>
-            </div>
-          </div>
-          <div class="venue-actions">
-            <a href="https://wa.me/919361115939?text=Hi%2C%20I%27m%20interested%20in%20joining%20Chennai%20Soccer%20School" target="_blank" class="btn btn-whatsapp">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              WhatsApp Us
-            </a>
-            <a href="https://maps.google.com/?q=Pasumpon+Dever+Mandapam,+158/100,+Habibullah+Road,+T.+Nagar,+Chennai+600017" target="_blank" class="btn btn-outline">
-              📍 Open in Maps
-            </a>
-          </div>
-        </div>
-        <div class="venue-map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8279953583517!2d80.22694631482253!3d13.040591990812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267cf25f0a6c7%3A0x3a7d2b6a3b123456!2sHabibullah+Rd%2C+T.+Nagar%2C+Chennai%2C+Tamil+Nadu+600017!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-            width="100%"
-            height="400"
-            style="border:0; border-radius: 12px;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="CSS Academy Location Map">
-          </iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CONTACT SECTION ===== -->
-  <section class="section contact" id="contact">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow">Get In Touch</span>
-        <h2 class="section-title">Start Your <span class="gold-text">Football Journey</span></h2>
-        <p class="section-desc">Ready to join the CSS Academy family? Reach out to us today.</p>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <img src="images/logo.png" alt="CSS Academy" class="contact-logo" />
-          <h3 class="contact-academy-name">Chennai Soccer School<br />&amp; Sports Academy</h3>
-          <div class="contact-info-list">
-            <div class="contact-info-item">
-              <span class="ci-icon">🏟️</span>
-              <div>
-                <strong>Venue</strong>
-                <p>Pasumpon Indoor Sports Facility<br />Pasumpon Dever Mandapam</p>
-              </div>
-            </div>
-            <div class="contact-info-item">
-              <span class="ci-icon">📍</span>
-              <div>
-                <strong>Address</strong>
-                <p>158/100, 2nd Floor, Habibullah Road,<br />T. Nagar, Chennai – 600017</p>
-              </div>
-            </div>
-            <div class="contact-info-item">
-              <span class="ci-icon">📱</span>
-              <div>
-                <strong>Contact</strong>
-                <p><a href="tel:+919361115939">+91 9361115939</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="contact-actions">
-            <a href="https://wa.me/919884042523?text=Hi%2C%20I%27m%20interested%20in%20joining%20Chennai%20Soccer%20School%20%26%20Sports%20Academy.%20Please%20share%20more%20details." target="_blank" class="btn btn-whatsapp btn-full">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              Chat on WhatsApp
-            </a>
-            <a href="tel:+919361115939" class="btn btn-primary btn-full">📞 Call Us Now</a>
-          </div>
-        </div>
-        <div class="enquiry-form-card">
-          <h3>Quick Enquiry</h3>
-          <p class="form-note">Fill in your details and we'll get back to you within 24 hours</p>
-          <div class="form-group">
-            <label>Your Name</label>
-            <input type="text" id="fname" placeholder="Enter your full name" />
-          </div>
-          <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" id="fphone" placeholder="+91 XXXXX XXXXX" />
-          </div>
-          <div class="form-group">
-            <label>Player's Age</label>
-            <input type="number" id="fage" placeholder="e.g. 10" />
-          </div>
-          <div class="form-group">
-            <label>Program Interest</label>
-            <select id="fprogram">
-              <option value="">Select a program</option>
-              <option>Kids Football Training (Ages 5–10)</option>
-              <option>Youth Development Program (Ages 11–16)</option>
-              <option>Advanced Player Training (Ages 17+)</option>
-              <option>Weekend Football Programs</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Message (Optional)</label>
-            <textarea id="fmessage" placeholder="Any questions or special requirements?" rows="3"></textarea>
-          </div>
-          <button class="btn btn-primary btn-full" onclick="sendWhatsApp()">
-            Send via WhatsApp ⚽
-          </button>
-          <p class="form-disclaimer">Your enquiry will be sent directly to our coaching team via WhatsApp.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="footer-top">
-      <div class="container footer-top-inner">
-        <div class="footer-brand">
-          <img src="images/logo.png" alt="CSS Academy" class="footer-logo" />
-          <div>
-            <p class="footer-brand-name">Chennai Soccer School</p>
-            <p class="footer-brand-sub">&amp; Sports Academy</p>
-            <p class="footer-tagline">Play | Learn | Grow | Succeed</p>
-          </div>
-        </div>
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#programs">Programs</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#venue">Venue</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h4>Contact Info</h4>
-          <p>📍 158/100, 2nd Floor, Habibullah Road,<br />T. Nagar, Chennai – 600017</p>
-          <p>📱 <a href="tel:+919361115939">+91 9361115939</a></p>
-          <p>🏟️ Pasumpon Indoor Sports Facility</p>
-          <a href="https://wa.me/919361115939" target="_blank" class="footer-wa">
-            WhatsApp Us
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p>© 2026 Chennai Soccer School &amp; Sports Academy. All Rights Reserved.</p>
-        <p class="footer-est">Est. 2005 · AFC Licensed Coaches · T. Nagar, Chennai</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/919361115939?text=Hi%2C%20I%27m%20interested%20in%20joining%20Chennai%20Soccer%20School!" target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>
-
-  <script src="script.js"></script>
-</body>
-</html>
