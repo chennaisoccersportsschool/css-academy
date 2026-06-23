@@ -1390,3 +1390,135 @@ input, select, textarea { font-family: var(--font-body); }
   }
   .animate-in { opacity: 1; transform: none; }
 }
+/* ===== PREMIUM ABOUT SECTION TEXT ===== */
+
+.about-text .about-lead,
+.about-text .about-body {
+    text-align: justify;
+    color: #b8d9ff;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.9;
+    letter-spacing: 0.3px;
+}
+
+
+/* Highlight first paragraph */
+.about-text .about-lead {
+    color: #d8ecff;
+    font-weight: 500;
+}
+
+
+/* Section background premium effect */
+.about {
+    background:
+    linear-gradient(
+        135deg,
+        #081426,
+        #102a4c
+    );
+}
+
+
+/* Premium heading font */
+.section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    letter-spacing: 1px;
+}
+
+
+/* Gold highlight */
+.gold-text {
+    color: #e8b923;
+}
+
+
+/* Feature card improvement */
+.feature-card {
+
+    background:
+    rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(10px);
+
+    border:1px solid rgba(120,180,255,0.25);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    transition:0.4s ease;
+
+}
+
+
+.feature-card:hover {
+
+    transform:translateY(-8px);
+
+    border-color:#e8b923;
+
+}
+
+
+
+/* Feature titles */
+
+.feature-card h3 {
+
+    font-family:'Oswald',sans-serif;
+
+    color:#ffffff;
+
+    font-size:20px;
+
+    text-transform:uppercase;
+
+}
+
+
+
+/* Feature description */
+
+.feature-card p {
+
+    color:#9fc8f5;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+}
+
+
+
+/* About left side animation */
+
+.about-text {
+
+    animation:fadeUp 0.8s ease;
+
+}
+
+
+@keyframes fadeUp {
+
+from {
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to {
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
