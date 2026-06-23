@@ -14,6 +14,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+<style>
+.about-lead,
+.about-body,
+.program-desc,
+.why-card p,
+.section-desc,
+.events-note,
+.gallery-note {
+    text-align: justify;
+    line-height: 1.8;
+}
+</style>
 </head>
 <body>
 
@@ -264,22 +277,25 @@
       <!-- Upcoming Events -->
       <div class="tab-content active" id="upcoming">
         <div class="events-grid">
-          <div class="event-card placeholder-card">
-            <div class="event-placeholder">
-              <div class="placeholder-icon">🏆</div>
-              <p class="placeholder-title">Summer Tournament 2026</p>
-              <p class="placeholder-date">Coming Soon</p>
-              <p class="placeholder-hint">Replace with your poster image</p>
-              <code class="file-hint">images/event-upcoming1.jpg</code>
-            </div>
-          </div>
+         <div class="event-card">
+    <img src="images/event-past2.jpg"
+         alt="State Youth Championship"
+         class="event-image">
+    <div class="event-content">
+        <div class="placeholder-icon">🏅</div>
+        <h3>State Youth Championship</h3>
+        <p class="placeholder-date">
+        September 2025
+        </p>
+    </div>
+</div>
           <div class="event-card placeholder-card">
             <div class="event-placeholder">
               <div class="placeholder-icon">⚽</div>
               <p class="placeholder-title">Inter-Academy Cup</p>
               <p class="placeholder-date">Coming Soon</p>
               <p class="placeholder-hint">Replace with your poster image</p>
-              <code class="file-hint">images/event-upcoming2.jpg</code>
+              <img src="images/event-upcoming2.jpg" alt="Upcoming Event 2" class="event-image">
             </div>
           </div>
           <div class="event-card placeholder-card">
@@ -288,7 +304,7 @@
               <p class="placeholder-title">Annual Sports Day</p>
               <p class="placeholder-date">Coming Soon</p>
               <p class="placeholder-hint">Replace with your poster image</p>
-              <code class="file-hint">images/event-upcoming3.jpg</code>
+              <img src="images/event-upcoming3.jpg" alt="Upcoming Event 3" class="event-image">
             </div>
           </div>
         </div>
@@ -303,7 +319,7 @@
               <p class="placeholder-title">CSS Annual Cup 2025</p>
               <p class="placeholder-date">December 2025</p>
               <p class="placeholder-hint">Replace with your tournament poster</p>
-              <code class="file-hint">images/event-past1.jpg</code>
+              <img src="images/event-past1.jpg" alt="Past Event 1" class="event-image">
             </div>
           </div>
           <div class="event-card placeholder-card">
@@ -312,7 +328,7 @@
               <p class="placeholder-title">State Youth Championship</p>
               <p class="placeholder-date">September 2025</p>
               <p class="placeholder-hint">Replace with your event banner</p>
-              <code class="file-hint">images/event-past2.jpg</code>
+              <img src="images/event-past2.jpg" alt="Past Event 2" class="event-image">
             </div>
           </div>
           <div class="event-card placeholder-card">
@@ -321,7 +337,7 @@
               <p class="placeholder-title">CSS Coaching Camp 2025</p>
               <p class="placeholder-date">June 2025</p>
               <p class="placeholder-hint">Replace with your camp photo</p>
-              <code class="file-hint">images/event-past3.jpg</code>
+              <img src="images/event-past3.jpg" alt="Past Event 3" class="event-image">
             </div>
           </div>
         </div>
@@ -354,7 +370,7 @@
           <div class="gallery-placeholder">
             <span class="gp-icon">📸</span>
             <p>Training Photo</p>
-            <code>images/gallery1.jpg</code>
+            <img src="images/gallery1.jpg" alt="Gallery 1" class="gallery-img">
           </div>
           <div class="gallery-overlay"><span class="gallery-label">Training</span></div>
         </div>
@@ -362,7 +378,7 @@
           <div class="gallery-placeholder">
             <span class="gp-icon">🏆</span>
             <p>Tournament</p>
-            <code>images/gallery2.jpg</code>
+            <img src="images/gallery2.jpg" alt="Gallery 2" class="gallery-img">
           </div>
           <div class="gallery-overlay"><span class="gallery-label">Tournament</span></div>
         </div>
@@ -370,7 +386,7 @@
           <div class="gallery-placeholder">
             <span class="gp-icon">⚽</span>
             <p>Match Day</p>
-            <code>images/gallery3.jpg</code>
+            <img src="images/gallery3.jpg" alt="Gallery 3" class="gallery-img">
           </div>
           <div class="gallery-overlay"><span class="gallery-label">Match Day</span></div>
         </div>
@@ -378,7 +394,7 @@
           <div class="gallery-placeholder">
             <span class="gp-icon">🥅</span>
             <p>Skills Session</p>
-            <code>images/gallery4.jpg</code>
+            <img src="images/gallery4.jpg" alt="Gallery 4" class="gallery-img">
           </div>
           <div class="gallery-overlay"><span class="gallery-label">Skills</span></div>
         </div>
@@ -386,7 +402,7 @@
           <div class="gallery-placeholder">
             <span class="gp-icon">🌟</span>
             <p>Awards Night</p>
-            <code>images/gallery5.jpg</code>
+            <img src="images/gallery5.jpg" alt="Gallery 5" class="gallery-img">
           </div>
           <div class="gallery-overlay"><span class="gallery-label">Awards</span></div>
         </div>
@@ -424,7 +440,7 @@
               <span class="vd-icon">📱</span>
               <div>
                 <strong>Phone</strong>
-                <p><a href="tel:+919361115939">+91 9361115939</a></p>
+                <p><a href="tel:+919361115939">+91 93611 15939</a></p>
               </div>
             </div>
             <div class="venue-detail">
@@ -492,7 +508,7 @@
               <span class="ci-icon">📱</span>
               <div>
                 <strong>Contact</strong>
-                <p><a href="tel:+919361115939">+91 9361115939</a></p>
+                <p><a href="tel:+919361115939">+91 93611 15939</a></p>
               </div>
             </div>
           </div>
@@ -569,7 +585,7 @@
         <div class="footer-contact">
           <h4>Contact Info</h4>
           <p>📍 158/100, 2nd Floor, Habibullah Road,<br />T. Nagar, Chennai – 600017</p>
-          <p>📱 <a href="tel:+919361115939">+91 9361115939</a></p>
+          <p>📱 <a href="tel:+919361115939">+91 93611 15939</a></p>
           <p>🏟️ Pasumpon Indoor Sports Facility</p>
           <a href="https://wa.me/919361115939" target="_blank" class="footer-wa">
             WhatsApp Us
